@@ -1,3 +1,16 @@
+# Question Moderator
+
+This is a React/Redux application that allows moderators to manage a set of questions.
+
+For example, if there was an upcoming event with Q&A, users could:
+- Add a new question
+- Vote an existing question up or down
+- Remove a question after it has been asked
+
+This is just a sample application for learning purposes. So this app does not:
+- Manage questions for different events (only one set of questions exists at a time)
+- Check that for a single user, a single vote is emitted on a question  
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

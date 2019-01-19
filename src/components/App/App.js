@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React  from 'react';
+import Create from '../Create/Create';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="app">
+    <Create/>
+  </div>
+);
 
 export default App;

@@ -1,0 +1,26 @@
+.create-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-question-btn {
+  align-self: flex-start;
+  width: fit-content;
+  font-size: 18px;
+  padding: 10px 30px;
+}
+
+.card {
+  border: 1px solid lightgray;
+  padding: 25px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+
+.card-title {
+  font-size: 1.5em;
+}
+
+.btn-cancel {
+  margin-left: 15px;
+}

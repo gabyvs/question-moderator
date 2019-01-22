@@ -22,10 +22,13 @@ class Create extends Component {
     this.setState({ isCreating: false });
   };
 
+  // TODO: handle adding a question with props
   addQuestion = (event) => {
     event.preventDefault();
+    // let question = {  };
     this.refs.form.reset();
     this.setState({ isCreating: false });
+    // this.props.addQuestion(question);
   };
 
 
@@ -43,7 +46,7 @@ class Create extends Component {
     }
     return (
       <div className="add-question-form">
-        <div className="card">
+        <div className="card create-card">
           <div className="card-body">
             <div className="card-title">Ask a new question</div>
             <form ref="form">
@@ -74,7 +77,9 @@ class Create extends Component {
                 className="btn btn-primary btn-submit"
                 disabled={false}
                 onClick={this.addQuestion}>Submit</button>
-              <button type="button" className="btn btn-default btn-cancel" onClick={this.closeCreate}>Cancel</button>
+              <button type="button"
+                      className="btn btn-default btn-cancel"
+                      onClick={this.closeCreate}>Cancel</button>
             </form>
           </div>
         </div>

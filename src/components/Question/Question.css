@@ -1,0 +1,38 @@
+.question-card {
+  margin-bottom: 25px;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+}
+
+.votes {
+  margin: 0 10px;
+  font-size: 1.5em;
+}
+
+.btn-delete {
+  margin-left: 25px;
+}
+
+.btn-up, .btn-down {
+  transform: scale(2);
+}
+
+.btn-up, .btn-down, .btn-delete{
+  opacity: 0.2;
+}
+
+.btn-up:hover, .btn-down:hover, .btn-delete:hover {
+  opacity: 1;
+}
+
+
+

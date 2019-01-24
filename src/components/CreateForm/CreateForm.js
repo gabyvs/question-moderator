@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
-import './Create.css';
+import PropTypes from 'prop-types';
+import './CreateForm.css';
 
-class Create extends Component {
+class CreateForm extends Component {
   state = {
-    isCreating: false,
     name: '',
     question: ''
-  };
-
-  openCreate = () => {
-    this.setState({ isCreating: true });
   };
 
   handleChange = (event) => {
@@ -17,39 +13,22 @@ class Create extends Component {
     this.setState({ [name]: value });
   };
 
-  closeCreate = () => {
-    this.refs.form.reset();
-    this.setState({ isCreating: false });
-  };
-
+  // TODO: add form validation
   // TODO: handle adding a question with props
   addQuestion = (event) => {
     event.preventDefault();
-    // let question = {  };
-    this.refs.form.reset();
+    let question = {  }; // TODO: create question
     this.setState({ isCreating: false });
-    // this.props.addQuestion(question);
+    this.props.addQuestion(question);
   };
 
-
   render() {
-    if (!this.state.isCreating) {
-      return (
-        <div className="create-container">
-          <button type="button"
-                  className="btn btn-primary add-question-btn"
-                  onClick={this.openCreate}>
-            Ask a new question
-          </button>
-        </div>
-      );
-    }
     return (
       <div className="add-question-form">
         <div className="card create-card">
           <div className="card-body">
             <div className="card-title">Ask a new question</div>
-            <form ref="form">
+            <form>
               <div className="form-group">
                 <label htmlFor="name">Your name</label>
                 <input
@@ -79,7 +58,7 @@ class Create extends Component {
                 onClick={this.addQuestion}>Submit</button>
               <button type="button"
                       className="btn btn-default btn-cancel"
-                      onClick={this.closeCreate}>Cancel</button>
+                      onClick={this.props.closeCreate}>Cancel</button>
             </form>
           </div>
         </div>
@@ -88,4 +67,9 @@ class Create extends Component {
   }
 }
 
-export default Create;
+CreateForm.propTypes = {
+  closeCreate: PropTypes.func.isRequired,
+  addQuestion: PropTypes.func.isRequired
+};
+
+export default CreateForm;

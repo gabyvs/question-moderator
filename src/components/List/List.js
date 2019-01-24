@@ -1,4 +1,5 @@
 import React    from 'react';
+import PropTypes from 'prop-types';
 import Question from '../Question/Question';
 import './List.css';
 
@@ -16,6 +17,10 @@ const List = ({ questions, upVote, downVote, deleteQuestion }) => {
   return (
     <div className="question-list">{questionList}</div>
   );
+};
+
+List.propTypes = {
+  questions: PropTypes.array.isRequired
 };
 
 export default List;

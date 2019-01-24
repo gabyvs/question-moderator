@@ -1,7 +1,7 @@
 import React from 'react';
 import './Question.css';
 
-const Question = ({ question, upVote: upVote, downVote: downVote, deleteQuestion }) => {
+const Question = ({ question, upVote, downVote, deleteQuestion }) => {
     return (
       <div className="card question-card">
         <div className="card-body">

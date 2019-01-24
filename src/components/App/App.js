@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import Create               from '../Create/Create';
-import './App.css';
 import List                 from '../List/List';
+import CreateBtn            from '../CreateBtn/CreateBtn';
+import CreateForm           from '../CreateForm/CreateForm';
+import './App.css';
 
 class App extends Component {
   state = {
+    isCreating: true,
     questions: [
       {
         name: 'Person 1',
@@ -20,11 +22,13 @@ class App extends Component {
       }
     ]
   };
-
+  
   render () {
     return (
       <div className="app">
-        <Create/>
+        {this.state.isCreating ?
+          <CreateForm addQuestion={() => {}} closeCreate={() => {}}/> :
+          <CreateBtn openCreate={() => {}}/>}
         <List questions={this.state.questions}/>
       </div>
     );

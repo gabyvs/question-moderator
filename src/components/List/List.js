@@ -20,7 +20,10 @@ const List = ({ questions, upVote, downVote, deleteQuestion }) => {
 };
 
 List.propTypes = {
-  questions: PropTypes.array.isRequired
+  questions: PropTypes.array.isRequired,
+  upVote: PropTypes.func.isRequired,
+  downVote: PropTypes.func.isRequired,
+  deleteQuestion: PropTypes.func.isRequired
 };
 
 export default List;

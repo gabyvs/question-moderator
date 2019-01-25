@@ -14,12 +14,9 @@ class CreateForm extends Component {
   };
 
   // TODO: add form validation
-  // TODO: handle adding a question with props
   addQuestion = (event) => {
     event.preventDefault();
-    let question = {  }; // TODO: create question
-    this.setState({ isCreating: false });
-    this.props.addQuestion(question);
+    this.props.addQuestion({ name: this.state.name, question: this.state.question });
   };
 
   render() {

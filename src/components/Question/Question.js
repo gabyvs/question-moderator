@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Question.css';
 
 const Question = ({ question, upVote, downVote, deleteQuestion }) => {
@@ -24,6 +25,18 @@ const Question = ({ question, upVote, downVote, deleteQuestion }) => {
         </div>
       </div>
     );
+};
+
+Question.propTypes = {
+  question: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    question: PropTypes.string.isRequired,
+    id: PropTypes.instanceOf(Date),
+    votes: PropTypes.number.isRequired
+  }),
+  upVote: PropTypes.func.isRequired,
+  downVote: PropTypes.func.isRequired,
+  deleteQuestion: PropTypes.func.isRequired,
 };
 
 export default Question;

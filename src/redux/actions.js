@@ -9,9 +9,7 @@ export const addQuestion = (name, question) => ({
   type: ADD_QUESTION,
   payload: {
     name,
-    question,
-    id: new Date.now(),
-    votes: 0
+    question
   }
 });
 

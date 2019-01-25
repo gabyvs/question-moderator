@@ -22,14 +22,21 @@ class App extends Component {
       }
     ]
   };
-  
+
+  // TODO: send open addQuestion, closeCreate, openCreate, upVote, downVote, deleteQuestion
   render () {
     return (
       <div className="app">
         {this.state.isCreating ?
-          <CreateForm addQuestion={() => {}} closeCreate={() => {}}/> :
+          <CreateForm
+            addQuestion={() => {}}
+            closeCreate={() => {}}/> :
           <CreateBtn openCreate={() => {}}/>}
-        <List questions={this.state.questions}/>
+        <List
+          questions={this.state.questions}
+          upVote={() => {}}
+          downVote={() => {}}
+          deleteQuestion={() => {}}/>
       </div>
     );
   }

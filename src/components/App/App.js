@@ -9,10 +9,8 @@ import './App.css';
 const App = ({ create }) => (
   <div className="app">
     {create ?
-      <CreateForm
-        addQuestion={() => {}}
-        closeCreate={() => {}}/> :
-      <CreateBtn openCreate={() => {}}/>}
+      <CreateForm /> :
+      <CreateBtn />}
     <List />
   </div>
 );

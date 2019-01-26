@@ -4,14 +4,11 @@ import { connect }  from 'react-redux';
 import Question     from '../Question/Question';
 import './List.css';
 
-const List = ({ questions, upVote, downVote, deleteQuestion }) => {
+const List = ({ questions }) => {
   const questionList = questions.map((question) => {
     return (
       <Question question={question}
-                key={question.id}
-                deleteQuestion={deleteQuestion}
-                upVote={upVote}
-                downVote={downVote} />
+                key={question.id} />
     );
   });
 
@@ -22,9 +19,6 @@ const List = ({ questions, upVote, downVote, deleteQuestion }) => {
 
 List.propTypes = {
   questions: PropTypes.array.isRequired,
-  upVote: PropTypes.func.isRequired,
-  downVote: PropTypes.func.isRequired,
-  deleteQuestion: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({ questions }) => {

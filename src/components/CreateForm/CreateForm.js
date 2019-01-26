@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes            from 'prop-types';
+import { connect }          from 'react-redux';
+import {
+  cancelCreate,
+  addQuestion }             from '../../redux/actions';
 import './CreateForm.css';
 
 class CreateForm extends Component {
@@ -69,4 +73,10 @@ CreateForm.propTypes = {
   addQuestion: PropTypes.func.isRequired
 };
 
-export default CreateForm;
+export default connect(
+  null,
+  {
+    cancelCreate,
+    addQuestion
+  }
+)(CreateForm);

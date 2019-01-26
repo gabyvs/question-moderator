@@ -1,5 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React          from 'react';
+import PropTypes      from 'prop-types';
+import { connect }    from 'react-redux';
+import { openCreate } from '../../redux/actions';
 import './CreateBtn.css';
 
 const CreateBtn = ({ openCreate }) => (
@@ -14,4 +16,7 @@ CreateBtn.propTypes = {
   openCreate: PropTypes.func.isRequired
 };
 
-export default CreateBtn;
+export default connect(
+  null,
+  { openCreate }
+)(CreateBtn);

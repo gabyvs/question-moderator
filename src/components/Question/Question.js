@@ -1,5 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React        from 'react';
+import PropTypes    from 'prop-types';
+import { connect }  from 'react-redux';
+import {
+  removeQuestion,
+  upVote,
+  downVote }        from '../../redux/actions';
 import './Question.css';
 
 const Question = ({ question, upVote, downVote, deleteQuestion }) => {
@@ -39,4 +44,11 @@ Question.propTypes = {
   deleteQuestion: PropTypes.func.isRequired,
 };
 
-export default Question;
+export default connect(
+  null,
+  {
+    removeQuestion,
+    upVote,
+    downVote
+  }
+)(Question);

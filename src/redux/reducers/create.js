@@ -1,4 +1,4 @@
-import { OPEN_CREATE, CANCEL_CREATE } from '../actionTypes';
+import { OPEN_CREATE, CANCEL_CREATE, ADD_QUESTION } from '../actionTypes';
 
 const initialState = false;
 
@@ -8,6 +8,9 @@ const create = (state = initialState, action) => {
       return true;
     }
     case CANCEL_CREATE: {
+      return false;
+    }
+    case ADD_QUESTION: {
       return false;
     }
     default: {

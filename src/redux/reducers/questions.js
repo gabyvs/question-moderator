@@ -10,7 +10,7 @@ const questions = (state = initialState, action) => {
   switch (action.type) {
     case ADD_QUESTION: {
       const { name, question } = action.payload;
-      return state.questions.concat({
+      return state.concat({
         name,
         question,
         id: new Date(),
@@ -19,15 +19,14 @@ const questions = (state = initialState, action) => {
     }
     case REMOVE_QUESTION: {
       const { id } = action.payload;
-      return state.questions.filter(q => q.id !== id);
+      return state.filter(q => q.id !== id);
     }
     case UPVOTE: {
-      const { id } = action.payload;
-      return state.questions.map(q => {
-        if (q.id === id) {
+      return state.map(q => {
+        if (q.id === action.payload.id) {
           return {
             ...q,
-            votes: q.votes++
+            votes: q.votes + 1
           };
         }
         return q;
@@ -35,11 +34,11 @@ const questions = (state = initialState, action) => {
     }
     case DOWNVOTE: {
       const { id } = action.payload;
-      return state.questions.map(q => {
+      return state.map(q => {
         if (q.id === id) {
           return {
             ...q,
-            votes: q.votes--
+            votes: Math.max(0, q.votes - 1)
           };
         }
         return q;

@@ -7,7 +7,7 @@ import {
   downVote }        from '../../redux/actions';
 import './Question.css';
 
-const Question = ({ question, upVote, downVote, deleteQuestion }) => {
+const Question = ({ question, upVote, downVote, removeQuestion }) => {
     return (
       <div className="card question-card">
         <div className="card-body">
@@ -16,14 +16,14 @@ const Question = ({ question, upVote, downVote, deleteQuestion }) => {
         <div className="card-footer">
           <div className="user">{question.name}</div>
           <div className="card-actions">
-            <div className="btn-up" onClick={upVote}>
+            <div className="btn-up" onClick={() => upVote(question.id)}>
               <i className="fas fa-caret-up"></i>
             </div>
             <div className="votes">{question.votes}</div>
-            <div className="btn-down" onClick={downVote}>
+            <div className="btn-down" onClick={() => downVote(question.id)}>
               <i className="fas fa-caret-down"></i>
             </div>
-            <div className="btn-delete" onClick={deleteQuestion}>
+            <div className="btn-delete" onClick={() => removeQuestion(question.id)}>
               <i className="fas fa-trash-alt"></i>
             </div>
           </div>
@@ -41,7 +41,7 @@ Question.propTypes = {
   }),
   upVote: PropTypes.func.isRequired,
   downVote: PropTypes.func.isRequired,
-  deleteQuestion: PropTypes.func.isRequired,
+  removeQuestion: PropTypes.func.isRequired,
 };
 
 export default connect(

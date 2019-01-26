@@ -20,7 +20,7 @@ class CreateForm extends Component {
   // TODO: add form validation
   addQuestion = (event) => {
     event.preventDefault();
-    this.props.addQuestion({ name: this.state.name, question: this.state.question });
+    this.props.addQuestion(this.state.name, this.state.question);
   };
 
   render() {
@@ -59,7 +59,7 @@ class CreateForm extends Component {
                 onClick={this.addQuestion}>Submit</button>
               <button type="button"
                       className="btn btn-default btn-cancel"
-                      onClick={this.props.closeCreate}>Cancel</button>
+                      onClick={this.props.cancelCreate}>Cancel</button>
             </form>
           </div>
         </div>
@@ -69,7 +69,7 @@ class CreateForm extends Component {
 }
 
 CreateForm.propTypes = {
-  closeCreate: PropTypes.func.isRequired,
+  cancelCreate: PropTypes.func.isRequired,
   addQuestion: PropTypes.func.isRequired
 };
 

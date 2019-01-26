@@ -1,6 +1,7 @@
-import React    from 'react';
-import PropTypes from 'prop-types';
-import Question from '../Question/Question';
+import React        from 'react';
+import PropTypes    from 'prop-types';
+import { connect }  from 'react-redux';
+import Question     from '../Question/Question';
 import './List.css';
 
 const List = ({ questions, upVote, downVote, deleteQuestion }) => {
@@ -26,4 +27,8 @@ List.propTypes = {
   deleteQuestion: PropTypes.func.isRequired
 };
 
-export default List;
+const mapStateToProps = ({ questions }) => {
+  return  ({ questions })
+};
+
+export default connect(mapStateToProps)(List);

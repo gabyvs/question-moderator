@@ -1,6 +1,6 @@
 import { OPEN_CREATE, CANCEL_CREATE } from '../actionTypes';
 
-const initialState = false;
+const initialState = true;
 
 const create = (state = initialState, action) => {
   switch (action.type) {

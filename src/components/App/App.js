@@ -1,28 +1,30 @@
-import React      from 'react';
-import List       from '../List/List';
-import CreateBtn  from '../CreateBtn/CreateBtn';
-import CreateForm from '../CreateForm/CreateForm';
+import React          from 'react';
+import PropTypes      from 'prop-types';
+import { connect }    from 'react-redux';
+import CreateBtn      from '../CreateBtn/CreateBtn';
+import CreateForm     from '../CreateForm/CreateForm';
+import List           from '../List/List';
 import './App.css';
-import PropTypes  from 'prop-types';
-
+const date = new Date();
+date.setDate(new Date().getDate() + 1);
 let questions = [
   {
     name: 'Person 1',
     question: "Why didn't I get a name?",
-    id: 1,
+    id: new Date(),
     votes: 0
   },
   {
     name: 'Alita',
     question: 'Can I fly?',
-    id: 2,
+    id: date,
     votes: 5
   }
 ];
 
-const App = (props) => (
+const App = ({ create }) => (
   <div className="app">
-    {props.isCreating ?
+    {create ?
       <CreateForm
         addQuestion={() => {}}
         closeCreate={() => {}}/> :
@@ -36,7 +38,11 @@ const App = (props) => (
 );
 
 App.propTypes = {
-  isCreating: PropTypes.bool.isRequired
+  create: PropTypes.bool.isRequired
 };
 
-export default App;
+const mapStateToProps = state => {
+  return  ({ create: state.create })
+};
+
+export default connect(mapStateToProps)(App);

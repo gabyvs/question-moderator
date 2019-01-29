@@ -1,7 +1,8 @@
-import React        from 'react';
-import PropTypes    from 'prop-types';
-import { connect }  from 'react-redux';
-import Question     from '../Question/Question';
+import React                  from 'react';
+import PropTypes              from 'prop-types';
+import { connect }            from 'react-redux';
+import Question               from '../Question/Question';
+import { getSortedQuestions } from '../../redux/selectors';
 import './List.css';
 
 const List = ({ questions }) => {
@@ -21,8 +22,8 @@ List.propTypes = {
   questions: PropTypes.array.isRequired,
 };
 
-const mapStateToProps = ({ questions }) => {
-  return  ({ questions })
+const mapStateToProps = (state) => {
+  return  ({ questions: getSortedQuestions(state) })
 };
 
 export default connect(mapStateToProps)(List);

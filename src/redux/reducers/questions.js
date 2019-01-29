@@ -4,7 +4,22 @@ import {
   UPVOTE,
   DOWNVOTE } from '../actionTypes';
 
-const initialState = [];
+const today = new Date();
+const yesterday = new Date();
+yesterday.setDate(today.getDate() + 1);
+const initialState = [
+  {
+    name: 'Alita',
+    question: 'Can I fly?',
+    id: today,
+    votes: 5
+  }, {
+    name: 'Lskdfi',
+    question: 'How can I pronounce my name?',
+    id: yesterday,
+    votes: 10
+  }
+];
 
 const questions = (state = initialState, action) => {
   switch (action.type) {

@@ -1,0 +1,13 @@
+{
+  "main.css": "/question-moderator/static/css/main.ede9cc9d.chunk.css",
+  "main.js": "/question-moderator/static/js/main.14a93c8b.chunk.js",
+  "main.js.map": "/question-moderator/static/js/main.14a93c8b.chunk.js.map",
+  "static/js/1.7c79e166.chunk.js": "/question-moderator/static/js/1.7c79e166.chunk.js",
+  "static/js/1.7c79e166.chunk.js.map": "/question-moderator/static/js/1.7c79e166.chunk.js.map",
+  "runtime~main.js": "/question-moderator/static/js/runtime~main.4eae1339.js",
+  "runtime~main.js.map": "/question-moderator/static/js/runtime~main.4eae1339.js.map",
+  "static/css/main.ede9cc9d.chunk.css.map": "/question-moderator/static/css/main.ede9cc9d.chunk.css.map",
+  "index.html": "/question-moderator/index.html",
+  "precache-manifest.7b969760f9aa86b0aeac0c018fe8640e.js": "/question-moderator/precache-manifest.7b969760f9aa86b0aeac0c018fe8640e.js",
+  "service-worker.js": "/question-moderator/service-worker.js"
+}

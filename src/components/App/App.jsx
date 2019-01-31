@@ -6,7 +6,7 @@ import CreateForm     from '../CreateForm/CreateForm';
 import List           from '../List/List';
 import './App.css';
 
-const App = ({ create }) => (
+export const App = ({ create }) => (
   <div className="app">
     {create ?
       <CreateForm /> :

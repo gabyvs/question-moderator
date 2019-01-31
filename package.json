@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "http://gabyvs.github.io/question-moderator",
+  "devDependencies": {
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.8.0",
+    "gh-pages": "^2.0.1"
+  },
   "dependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
@@ -28,8 +33,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "gh-pages": "^2.0.1"
-  }
+  ]
 }

@@ -4,7 +4,7 @@ import { connect }    from 'react-redux';
 import { openCreate } from '../../redux/actions';
 import './CreateBtn.css';
 
-const CreateBtn = ({ openCreate }) => (
+export const CreateBtn = ({ openCreate }) => (
   <button type="button"
           className="btn btn-primary create-question-btn"
           onClick={openCreate}>

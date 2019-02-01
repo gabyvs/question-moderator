@@ -6,7 +6,7 @@ import {
 
 const today = new Date();
 const yesterday = new Date();
-yesterday.setDate(today.getDate() + 1);
+yesterday.setDate(today.getDate() - 1);
 const initialState = [
   {
     name: 'Alita',

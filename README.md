@@ -7,6 +7,8 @@ For example, if there was an upcoming event with Q&A, users could:
 - Vote an existing question up or down
 - Remove a question after it has been asked
 
+Questions will be shown ordered by the number of votes they have.
+
 This is just a sample application for learning purposes. So this app does not:
 - Manage questions for different events (only one set of questions exists at a time)
 - Check that for a single user, a single vote is emitted on a question  

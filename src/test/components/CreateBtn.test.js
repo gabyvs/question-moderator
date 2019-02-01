@@ -2,24 +2,34 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { CreateBtn } from '../../components/CreateBtn/CreateBtn';
 
-function setup() {
-  const props = {
-    openCreate: jest.fn()
-  };
-
-  const wrapper = shallow(<CreateBtn {...props} />);
-
-  return {
-    props,
-    wrapper: wrapper
-  }
-}
-
 describe('CreateBtn', () => {
+  let props;
+  let wrapper;
+
+  beforeEach(() => {
+    props = {
+      openCreate: jest.fn()
+    };
+
+    wrapper = shallow(<CreateBtn {...props} />);
+  });
+
   it('should have a button element', () => {
-    const { wrapper } = setup();
     expect(wrapper.containsMatchingElement(
       <button>Ask a new question</button>
     )).toBe(true);
+  });
+
+  describe('and the user hits the button', () => {
+
+    beforeEach(() => {
+      const button = wrapper.find('button');
+      button.simulate('click');
+    });
+
+
+    it('should call openCreate', () => {
+      expect(props.openCreate.mock.calls.length).toBe(1);
+    });
   });
 });

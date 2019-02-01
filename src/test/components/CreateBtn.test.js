@@ -1,9 +1,6 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 import { CreateBtn } from '../../components/CreateBtn/CreateBtn';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 function setup() {
   const props = {

@@ -6,7 +6,7 @@ import {
   addQuestion }             from '../../redux/actions';
 import './CreateForm.css';
 
-class CreateForm extends Component {
+export class CreateForm extends Component {
   state = {
     name: '',
     question: ''
